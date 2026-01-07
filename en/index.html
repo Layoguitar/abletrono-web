@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AbleTrono Pro | Ultimate Remote Control</title>
+    <meta name="description" content="The secure interface your live show needs. Total control for Ableton Live with zero latency.">
+    
+    <link rel="alternate" hreflang="es" href="https://setlistpro.live/" />
+    <link rel="alternate" hreflang="en" href="https://setlistpro.live/en/" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+
+    <style>
+        /* CSS IDENTICAL TO ROOT - MAINTAINING CONSISTENCY */
+        :root {
+            --bg-body: #000000; --bg-card: #1c1c1e; --bg-card-hover: #2c2c2e;
+            --accent-blue: #2997ff; --accent-hover: #0077ED;
+            --text-primary: #f5f5f7; --text-secondary: #86868b;
+            --divider: #424245;
+            --font-stack: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            --apple-ease: cubic-bezier(0.16, 1, 0.3, 1); 
+        }
+        body { font-family: var(--font-stack); background-color: var(--bg-body); color: var(--text-primary); margin: 0; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        .nav-bar { position: sticky; top: 0; z-index: 100; background: rgba(28, 28, 30, 0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 15px 0; text-align: center; transition: transform 0.3s var(--apple-ease); }
+        .nav-content { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.02em; display: flex; justify-content: center; align-items: center; gap: 10px; }
+        .nav-content span.code { color: var(--accent-blue); font-weight: 700; }
+        .lang-btn { text-decoration: none; color: white; border: 1px solid rgba(255,255,255,0.3); padding: 4px 10px; border-radius: 12px; font-size: 0.7rem; transition: 0.3s; }
+        .lang-btn:hover { background: rgba(255,255,255,0.1); border-color: white; }
+        .reveal-up { opacity: 0; transform: translateY(40px) scale(0.98); transition: opacity 0.8s var(--apple-ease), transform 0.8s var(--apple-ease); }
+        .reveal-up.is-visible { opacity: 1; transform: translateY(0) scale(1); }
+        .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; } .delay-4 { transition-delay: 0.4s; }
+        .hero { text-align: center; padding: 100px 20px 60px; max-width: 980px; margin: 0 auto; }
+        .hero-logo { width: 100%; max-width: 650px; height: auto; margin-bottom: 40px; }
+        @keyframes shimmer { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
+        .hero h1 { font-size: 5.5rem; line-height: 1.05; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 25px; background: linear-gradient(90deg, #fff 0%, #b6b6b6 20%, #fff 40%, #b6b6b6 60%, #fff 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 8s linear infinite reverse; }
+        .hero p { font-size: 1.7rem; line-height: 1.4; color: var(--text-secondary); max-width: 650px; margin: 0 auto 50px; font-weight: 400; }
+        .btn { display: inline-block; padding: 15px 35px; border-radius: 980px; font-size: 19px; font-weight: 600; text-decoration: none; transition: transform 0.3s var(--apple-ease), background-color 0.3s ease; cursor: pointer; border: none; }
+        .btn-primary { background-color: var(--accent-blue); color: white; }
+        .btn-primary:hover { background-color: var(--accent-hover); transform: scale(1.03); }
+        .btn-link { color: var(--accent-blue); font-size: 17px; margin-top: 25px; display: inline-block; transition: opacity 0.3s ease; }
+        .btn-link:hover { opacity: 0.8; text-decoration: underline; }
+        .hero-image-container { margin-top: 80px; border-radius: 28px; overflow: hidden; box-shadow: 0 0 0 1px rgba(255,255,255,0.1), 0 40px 100px -20px rgba(0,0,0,1); transition: transform 0.5s var(--apple-ease); }
+        .hero-image-container:hover { transform: scale(1.01); }
+        .hero-image { width: 100%; display: block; }
+        .section-title { font-size: 3rem; font-weight: 700; text-align: center; margin: 120px 0 80px; letter-spacing: -1px; }
+        .container { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+        .bento-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .bento-card { background-color: var(--bg-card); padding: 40px 30px; border-radius: 28px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.4s var(--apple-ease), background-color 0.3s ease, box-shadow 0.4s var(--apple-ease); height: 320px; }
+        .bento-card:hover { background-color: var(--bg-card-hover); transform: scale(1.02) translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .bento-icon { font-size: 3.5rem; margin-bottom: 20px; }
+        .bento-title { font-size: 1.7rem; font-weight: 600; color: var(--text-primary); margin: 0 0 10px; }
+        .bento-desc { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.4; }
+        .pricing-section { padding: 120px 20px; text-align: center; }
+        .pricing-card { background: linear-gradient(180deg, #2c2c2e 0%, #1c1c1e 100%); max-width: 420px; margin: 0 auto; border-radius: 35px; padding: 60px 40px; border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; transition: transform 0.4s var(--apple-ease); }
+        .pricing-card:hover { transform: scale(1.02); }
+        .badge-save { background: rgba(41, 151, 255, 0.2); color: var(--accent-blue); font-size: 13px; font-weight: 700; padding: 8px 16px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; display: inline-block; }
+        .price-large { font-size: 5.5rem; font-weight: 700; letter-spacing: -3px; line-height: 1; margin: 10px 0; }
+        .price-small { font-size: 1.8rem; color: var(--text-secondary); text-decoration: line-through; }
+        .price-label { color: var(--text-secondary); margin-bottom: 30px; font-size: 1.1rem; }
+        footer { background-color: #111; padding: 60px 20px; font-size: 13px; color: var(--text-secondary); border-top: 1px solid var(--divider); text-align: center; margin-top: 80px; }
+        @media (max-width: 768px) { .hero { padding-top: 60px; } .hero-logo { max-width: 220px; } .hero h1 { font-size: 3.2rem; margin-bottom: 15px; } .hero p { font-size: 1.3rem; margin-bottom: 30px; } .bento-card { height: auto; min-height: 250px; } .price-large { font-size: 4.5rem; } }
+    </style>
+</head>
+<body>
+
+    <div class="nav-bar" id="mainNav">
+        <div class="nav-content">
+            CODE: <span class="code">LANZAMIENTO26</span>
+            <span style="opacity: 0.5; margin: 0 5px;">|</span>
+            <a href="/" class="lang-btn">🇪🇸 Español</a>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="reveal-up">
+            <img src="../assets/logo.png" alt="AbleTrono Logo" class="hero-logo">
+        </div>
+
+        <h1 class="reveal-up delay-1">Total Control.<br>Zero Hassle.</h1>
+        <p class="reveal-up delay-2">The secure interface your live show needs. 1-click install and zero latency for Ableton Live.</p>
+        
+        <div class="reveal-up delay-3">
+            <a href="https://abletronopro.gumroad.com/" class="btn btn-primary">Get Instant Access</a>
+            <br>
+            <a href="instalacion.html" class="btn-link">See how it works ></a>
+        </div>
+
+        <div class="hero-image-container reveal-up delay-4">
+            <img src="../assets/hero-mockup.png" alt="App Interface" class="hero-image" onerror="this.style.display='none'">
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title reveal-up">Designed for the Stage.</h2>
+        <div class="bento-grid">
+            <div class="bento-card reveal-up delay-1">
+                <div>
+                    <div class="bento-icon">🔒</div>
+                    <h3 class="bento-title">Ghost Lock</h3>
+                </div>
+                <p class="bento-desc">Prevent disasters. Lock the interface so accidental touches never stop your live music.</p>
+            </div>
+            
+            <div class="bento-card reveal-up delay-2">
+                <div>
+                    <div class="bento-icon">⚡️</div>
+                    <h3 class="bento-title">Native Install</h3>
+                </div>
+                <p class="bento-desc">No manual IP setup required. Our script configures everything on Windows and Mac in 10 seconds.</p>
+            </div>
+
+            <div class="bento-card reveal-up delay-3">
+                <div>
+                    <div class="bento-icon">🛑</div>
+                    <h3 class="bento-title">Smart Kill Switch</h3>
+                </div>
+                <p class="bento-desc">Intelligent panic button: silences the sequences but keeps the Click track alive for the band.</p>
+            </div>
+
+            <div class="bento-card reveal-up delay-4">
+                <div>
+                    <div class="bento-icon">📱</div>
+                    <h3 class="bento-title">Stage View</h3>
+                </div>
+                <p class="bento-desc">Large buttons and high contrast. Specifically designed for dark environments.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section reveal-up">
+        <h2 class="section-title">Professional. Lifetime.</h2>
+        
+        <div class="pricing-card reveal-up delay-2">
+            <div class="badge-save">USE CODE LANZAMIENTO26</div>
+            
+            <div class="price-small">$70 USD</div>
+            <div class="price-large">$50</div>
+            <p class="price-label">One-time payment. No subscriptions.</p>
+            
+            <a href="https://abletronopro.gumroad.com/" class="btn btn-primary" style="width: 100%; box-sizing: border-box;">
+                Get License Key
+            </a>
+            
+            <p style="margin-top: 25px; font-size: 0.9rem; color: #86868b;">
+                Includes future v1.x updates
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright © 2026 AbleTronoPro. All rights reserved.</p>
+        <p>
+            <a href="#" style="color: #86868b; text-decoration: none; margin: 0 10px;">Privacy</a> | 
+            <a href="#" style="color: #86868b; text-decoration: none; margin: 0 10px;">Support</a>
+        </p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const options = { threshold: 0.15 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+            document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+
+            let lastScrollTop = 0;
+            const nav = document.getElementById('mainNav');
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop && scrollTop > 100) { nav.style.transform = 'translateY(-100%)'; } 
+                else { nav.style.transform = 'translateY(0)'; }
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            }, false);
+        });
+    </script>
+</body>
+</html>
