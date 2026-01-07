@@ -89,7 +89,8 @@
             background: #000;
         }
         .hero-image-container:hover { transform: scale(1.01); box-shadow: 0 0 0 1px rgba(255,255,255,0.2), 0 60px 120px -20px rgba(0,0,0,0.9); }
-        
+        .hero-image { width: 100%; display: block; }
+
         /* Responsive Video Fix */
         .video-responsive {
             position: relative;
@@ -169,7 +170,14 @@
         </div>
 
         <div class="hero-image-container reveal-up delay-4">
-            <div class="video-responsive">
+            <img src="../assets/hero-mockup.png" alt="App Interface" class="hero-image">
+        </div>
+    </section>
+
+    <section class="container" style="margin-top: 80px;">
+        <h2 class="section-title reveal-up" style="margin-bottom: 50px; font-size: 2.5rem;">See it in Action</h2>
+        <div class="hero-image-container reveal-up delay-2" style="margin-top: 0;">
+             <div class="video-responsive">
                 <iframe src="https://www.youtube.com/embed/PvDVsQ2qXNQ?rel=0&modestbranding=1" title="AbleTrono Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
