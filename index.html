@@ -6,15 +6,16 @@
     <title>AbleTrono Pro | Control Remoto Definitivo</title>
     <meta name="description" content="La interfaz segura que tu show en vivo necesita. Control total para Ableton Live con latencia cero.">
     
-    <link rel="alternate" hreflang="es" href="https://setlistpro.live/" />
     <link rel="alternate" hreflang="en" href="https://setlistpro.live/en/" />
+    <link rel="alternate" hreflang="es" href="https://setlistpro.live/" />
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#050507">
 
+    <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+
     <style>
-        /* ESTILO APPLE "PRO" - DARK MODE PREMIUM */
         :root {
             --bg-body: #050507; 
             --bg-card: rgba(255, 255, 255, 0.03); 
@@ -62,8 +63,6 @@
         .hero { text-align: center; padding: 120px 20px 60px; max-width: 980px; margin: 0 auto; }
         .hero-logo { width: 100%; max-width: 650px; height: auto; margin-bottom: 40px; filter: drop-shadow(0 0 30px rgba(255,255,255,0.05)); }
         
-        @keyframes shimmer { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
-        
         .hero h1 { 
             font-size: 5rem; line-height: 1.05; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 25px; 
             background: linear-gradient(135deg, #ffffff 0%, #a5a5a5 100%); 
@@ -72,40 +71,23 @@
         
         .hero p { font-size: 1.5rem; line-height: 1.5; color: var(--text-secondary); max-width: 600px; margin: 0 auto 50px; font-weight: 400; }
 
-        .btn { display: inline-block; padding: 16px 32px; border-radius: 980px; font-size: 17px; font-weight: 600; text-decoration: none; transition: all 0.3s var(--apple-ease); cursor: pointer; border: none; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 16px 32px; border-radius: 980px; font-size: 17px; font-weight: 600; text-decoration: none; transition: all 0.3s var(--apple-ease); cursor: pointer; border: none; }
         .btn-primary { background-color: var(--accent-blue); color: white; box-shadow: 0 0 20px var(--accent-glow); }
         .btn-primary:hover { background-color: #0077ED; transform: scale(1.02); box-shadow: 0 0 35px var(--accent-glow); }
         
         .btn-link { color: var(--accent-blue); font-size: 16px; margin-top: 25px; display: inline-block; transition: 0.3s; }
         .btn-link:hover { opacity: 0.8; text-decoration: underline; }
 
-        /* Estilo Contenedor Imagen/Video */
         .hero-image-container { 
-            margin-top: 80px; 
-            border-radius: 24px; 
-            overflow: hidden; 
+            margin-top: 80px; border-radius: 24px; overflow: hidden; 
             box-shadow: 0 0 0 1px rgba(255,255,255,0.1), 0 50px 100px -20px rgba(0,0,0,0.8); 
-            transition: transform 0.5s var(--apple-ease); 
-            background: #000;
+            transition: transform 0.5s var(--apple-ease); background: #000;
         }
         .hero-image-container:hover { transform: scale(1.01); box-shadow: 0 0 0 1px rgba(255,255,255,0.2), 0 60px 120px -20px rgba(0,0,0,0.9); }
         .hero-image { width: 100%; display: block; }
 
-        /* Estilo Video Responsive */
-        .video-responsive {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-        }
-        .video-responsive iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
+        .video-responsive { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+        .video-responsive iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
         .section-title { font-size: 3rem; font-weight: 700; text-align: center; margin: 140px 0 80px; letter-spacing: -0.5px; color: #f5f5f7; }
         .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
@@ -149,7 +131,7 @@
 
     <div class="nav-bar" id="mainNav">
         <div class="nav-content">
-            CÓDIGO: <span class="code">LANZAMIENTO26</span>
+            CÓDIGO: <span class="code">FIRST50</span>
             <span style="opacity: 0.5; margin: 0 5px;">|</span>
             <a href="en/index.html" class="lang-btn">🇺🇸 English</a>
         </div>
@@ -161,16 +143,16 @@
         </div>
 
         <h1 class="reveal-up delay-1">Control Total.<br>Cero Problemas.</h1>
-        <p class="reveal-up delay-2">La interfaz segura que tu show en vivo necesita. Instalación en 1 clic y latencia cero para Ableton Live.</p>
+        <p class="reveal-up delay-2">La interfaz segura que tu show en vivo necesita. Instalación en 1 click y latencia cero para Ableton Live.</p>
         
         <div class="reveal-up delay-3">
-            <a href="https://abletronopro.gumroad.com/" class="btn btn-primary">Obtener Acceso Inmediato</a>
+            <a href="https://setlistpro.lemonsqueezy.com/checkout/buy/227172d1-f775-437d-8de9-22a6db6b0366" class="btn btn-primary lemonsqueezy-button">Comprar Ahora</a>
             <br>
-            <a href="instalacion.html" class="btn-link">Mira cómo funciona ></a>
+            <a href="instalacion.html" class="btn-link">Ver cómo funciona ></a>
         </div>
 
         <div class="hero-image-container reveal-up delay-4">
-            <img src="assets/hero-mockup.png" alt="Interfaz de la App" class="hero-image">
+            <img src="assets/hero-mockup.png" alt="App Interface" class="hero-image">
         </div>
     </section>
 
@@ -178,7 +160,7 @@
         <h2 class="section-title reveal-up" style="margin-bottom: 50px; font-size: 2.5rem;">Míralo en Acción</h2>
         <div class="hero-image-container reveal-up delay-2" style="margin-top: 0;">
              <div class="video-responsive">
-                <iframe src="https://www.youtube.com/embed/PvDVsQ2qXNQ?rel=0&modestbranding=1" title="Demo AbleTrono" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/PvDVsQ2qXNQ?rel=0&modestbranding=1" title="AbleTrono Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -189,9 +171,9 @@
             <div class="bento-card reveal-up delay-1">
                 <div>
                     <div class="bento-icon">🔒</div>
-                    <h3 class="bento-title">Bloqueo Fantasma</h3>
+                    <h3 class="bento-title">Ghost Lock</h3>
                 </div>
-                <p class="bento-desc">Evita desastres. Bloquea la interfaz para que toques accidentales nunca detengan tu música.</p>
+                <p class="bento-desc">Evita desastres. Bloquea la interfaz para que toques accidentales nunca detengan tu música en vivo.</p>
             </div>
             
             <div class="bento-card reveal-up delay-2">
@@ -199,23 +181,23 @@
                     <div class="bento-icon">⚡️</div>
                     <h3 class="bento-title">Instalación Nativa</h3>
                 </div>
-                <p class="bento-desc">Sin configurar IPs manuales. Nuestro script configura todo en Windows y Mac en 10 segundos.</p>
+                <p class="bento-desc">Sin configurar IPs manuales. Nuestro script lo configura todo en Windows y Mac en 10 segundos.</p>
             </div>
 
             <div class="bento-card reveal-up delay-3">
                 <div>
                     <div class="bento-icon">🛑</div>
-                    <h3 class="bento-title">Botón de Pánico</h3>
+                    <h3 class="bento-title">Smart Kill Switch</h3>
                 </div>
-                <p class="bento-desc">Kill Switch inteligente: silencia las secuencias pero mantiene el Click activo para la banda.</p>
+                <p class="bento-desc">Botón de pánico inteligente: silencia las secuencias pero mantiene el Click vivo para la banda.</p>
             </div>
 
             <div class="bento-card reveal-up delay-4">
                 <div>
                     <div class="bento-icon">📱</div>
-                    <h3 class="bento-title">Vista de Escenario</h3>
+                    <h3 class="bento-title">Modo Escenario</h3>
                 </div>
-                <p class="bento-desc">Botones grandes y alto contraste. Diseñado específicamente para entornos oscuros.</p>
+                <p class="bento-desc">Botones grandes y alto contraste. Específicamente diseñado para entornos oscuros.</p>
             </div>
         </div>
     </section>
@@ -224,13 +206,13 @@
         <h2 class="section-title">Profesional. De por vida.</h2>
         
         <div class="pricing-card reveal-up delay-2">
-            <div class="badge-save">USA EL CÓDIGO LANZAMIENTO26</div>
+            <div class="badge-save">USA EL CÓDIGO FIRST50</div>
             
             <div class="price-small">$70 USD</div>
-            <div class="price-large">$50</div>
+            <div class="price-large">35%</div>
             <p class="price-label">Pago único. Sin suscripciones.</p>
             
-            <a href="https://abletronopro.gumroad.com/" class="btn btn-primary" style="width: 100%; box-sizing: border-box;">
+            <a href="https://setlistpro.lemonsqueezy.com/checkout/buy/227172d1-f775-437d-8de9-22a6db6b0366" class="btn btn-primary lemonsqueezy-button" style="width: 100%; box-sizing: border-box;">
                 Obtener Licencia
             </a>
             
@@ -244,7 +226,7 @@
         <p>Copyright © 2026 AbleTronoPro. Todos los derechos reservados.</p>
         <p>
             <a href="#" style="color: #86868b; text-decoration: none; margin: 0 10px;">Privacidad</a> | 
-            <a href="#" style="color: #86868b; text-decoration: none; margin: 0 10px;">Soporte</a>
+            <a href="mailto:support@abletrono.com" style="color: #86868b; text-decoration: none; margin: 0 10px;">Soporte</a>
         </p>
     </footer>
 

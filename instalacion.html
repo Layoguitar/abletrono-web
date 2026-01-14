@@ -11,7 +11,6 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎛️</text></svg>">
     
     <style>
-        /* ESTILO COHERENTE CON INDEX (APPLE PRO) */
         :root {
             --bg-body: #050507; 
             --bg-card: rgba(255, 255, 255, 0.03); 
@@ -22,7 +21,6 @@
             --text-muted: #86868b;
             --card-border: rgba(255, 255, 255, 0.1);
             --font-stack: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
-            --apple-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
         }
         
         body { 
@@ -31,9 +29,7 @@
             background-image: radial-gradient(circle at 50% 0%, #2a2a2e 0%, #000000 80%);
             background-attachment: fixed;
             color: var(--text-main); 
-            margin: 0; 
-            line-height: 1.6; 
-            min-height: 100vh; 
+            margin: 0; line-height: 1.6; min-height: 100vh; 
             -webkit-font-smoothing: antialiased;
         }
 
@@ -43,8 +39,8 @@
         .nav-links { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
         .back-link { 
             color: var(--text-muted); font-size: 0.9rem; text-decoration: none; display: inline-block; 
-            transition: 0.3s; border: 1px solid var(--card-border); padding: 8px 20px; border-radius: 20px; 
-            background: rgba(255,255,255,0.05); backdrop-filter: blur(5px);
+            transition: 0.3s; border: 1px solid var(--card-border); padding: 8px 20px; 
+            border-radius: 20px; background: rgba(255,255,255,0.05); backdrop-filter: blur(5px);
         }
         .back-link:hover { border-color: var(--primary); color: var(--primary); background: rgba(255,255,255,0.1); }
         
@@ -61,10 +57,9 @@
         .step-card:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.2); }
         
         .step-number { 
-            background: rgba(41, 151, 255, 0.1); color: var(--primary); width: 45px; height: 45px; 
-            border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; 
-            flex-shrink: 0; border: 1px solid rgba(41, 151, 255, 0.3); font-size: 1.2rem; 
-            box-shadow: 0 0 15px rgba(41, 151, 255, 0.1); 
+            background: rgba(41, 151, 255, 0.1); color: var(--primary); width: 45px; height: 45px; border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0; 
+            border: 1px solid rgba(41, 151, 255, 0.3); font-size: 1.2rem; box-shadow: 0 0 15px rgba(41, 151, 255, 0.1); 
         }
         
         .step-content { flex: 1; }
@@ -77,8 +72,8 @@
         
         .code-box { 
             background: #000; padding: 18px; border-radius: 12px; font-family: 'Courier New', monospace; 
-            font-size: 0.95rem; color: #00ff9d; border: 1px solid #333; margin-top: 15px; 
-            display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
+            font-size: 0.95rem; color: #00ff9d; border: 1px solid #333; margin-top: 15px; display: inline-block; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
         }
         
         .platform-box { display: flex; gap: 20px; margin-bottom: 20px; }
@@ -93,7 +88,9 @@
         footer a { color: var(--primary); text-decoration: none; }
         footer a:hover { text-decoration: underline; }
         
-        @media (max-width: 600px) { .step-card { flex-direction: column; padding: 25px; } .platform-box { flex-direction: column; gap: 10px; } h1 { font-size: 2rem; } }
+        @media (max-width: 600px) { 
+            .step-card { flex-direction: column; padding: 25px; } .platform-box { flex-direction: column; gap: 10px; } h1 { font-size: 2rem; } 
+        }
     </style>
 </head>
 <body>
@@ -102,7 +99,7 @@
         <header>
             <div class="nav-links">
                 <a href="index.html" class="back-link">← Volver al Inicio</a>
-                <a href="en/instalacion.html" class="back-link">🇺🇸 Guide in English</a>
+                <a href="en/instalacion.html" class="back-link">🇺🇸 English Guide</a>
             </div>
             
             <div>
@@ -122,7 +119,7 @@
                 <div class="platform-box">
                     <div class="p-item">
                         <span class="p-title">🖥️ Windows</span>
-                        Ejecuta el archivo instalador <strong>.exe</strong>. La app se abrirá automáticamente.
+                        Ejecuta el archivo <strong>.exe</strong>. La aplicación se abrirá automáticamente tras instalar.
                     </div>
                     <div class="p-item">
                         <span class="p-title">🍎 macOS</span>
@@ -131,7 +128,7 @@
                 </div>
 
                 <p style="background: rgba(41, 151, 255, 0.1); padding: 15px; border-radius: 12px; border: 1px solid rgba(41, 151, 255, 0.2); color: #cceeff;">
-                    🔑 <strong>Activación:</strong> Al abrir la app por primera vez, te pedirá tu Clave de Licencia (License Key). Úsala para activar tu copia.
+                    🔑 <strong>Activación:</strong> Al abrir la app por primera vez, te pedirá tu Licencia. Úsala para activar tu copia.
                 </p>
             </div>
         </div>
@@ -143,12 +140,12 @@
                 <ol>
                     <li>Abre (o reinicia) <strong>Ableton Live</strong>.</li>
                     <li>Ve a <strong>Preferencias</strong> (<code>Ctrl + ,</code> en Windows o <code>Cmd + ,</code> en Mac).</li>
-                    <li>Entra a la pestaña <strong>"Link / Tempo / MIDI"</strong>.</li>
+                    <li>Ve a la pestaña <strong>"Link / Tempo / MIDI"</strong>.</li>
                     <li>En la columna <strong>"Control Surface"</strong>, busca y selecciona:</li>
                 </ol>
                 <div class="code-box">AbletronoApp</div>
                 <p style="margin-top: 20px; font-size: 0.95rem; color: #ffcc00;">
-                    ⚠️ <strong>Importante:</strong> Deja los puertos de "Input" y "Output" en <strong>None</strong>. No selecciones nada ahí.
+                    ⚠️ <strong>Importante:</strong> Deja los puertos de "Input" y "Output" en <strong>None (Ninguno)</strong>. No selecciones nada ahí.
                 </p>
             </div>
         </div>
@@ -158,9 +155,9 @@
             <div class="step-content">
                 <h3>Conecta tu Tablet</h3>
                 <ol>
-                    <li>Asegúrate de que tu PC/Mac y tu dispositivo estén conectados a la <strong>MISMA red WiFi</strong>.</li>
+                    <li>Asegúrate de que tu PC/Mac y tu dispositivo estén en la <strong>MISMA red WiFi</strong>.</li>
                     <li>En la app de escritorio AbleTrono, verás una dirección IP (Ejemplo: <code>http://192.168.1.5:3001</code>).</li>
-                    <li>Escribe esa dirección exacta en el navegador de tu Tablet o Celular.</li>
+                    <li>Escribe esa dirección exacta en el navegador de tu Tablet o Móvil.</li>
                 </ol>
                 <div class="code-box">http://TU_IP:3001</div>
                 <p style="margin-top: 15px;">
@@ -171,7 +168,7 @@
 
         <footer>
             <p>&copy; 2026 AbleTronoPro. Todos los derechos reservados.</p>
-            <p>¿Necesitas ayuda? <a href="https://gtrsampleshop.gumroad.com/" target="_blank">Contactar Soporte en Gumroad</a></p>
+            <p>¿Necesitas ayuda? <a href="mailto:support@abletrono.com">Contactar Soporte</a></p>
         </footer>
     </div>
 
